@@ -39,8 +39,11 @@ research_and_draft_workflow = SequentialAgent(
 # Create a LoopAgent named "quality_improvement_loop"
 # with sub_agents=[quality_checker_agent, content_improver_agent]
 # and max_iterations=MAX_IMPROVEMENT_ITERATIONS
-quality_improvement_loop = None  # Replace this line
-
+quality_improvement_loop = LoopAgent(
+    name="quality_improvement_loop",
+    sub_agents=[quality_checker_agent, content_improver_agent],
+    max_iterations=MAX_IMPROVEMENT_ITERATIONS,
+)
 
 # --- Section 8: Parallel — Multi-Channel Content Creation ---
 # TODO: #REPLACE-parallel-content-creation
@@ -76,4 +79,8 @@ orchestrator_agent = None  # Replace this line
 
 # root_agent is used by `adk web` and the Runner
 # root_agent = orchestrator_agent
-root_agent = research_and_draft_workflow
+# root_agent = research_and_draft_workflow # Section 6
+root_agent = SequentialAgent(
+    name="two_phase_pipeline",
+    sub_agents=[research_and_draft_workflow, quality_improvement_loop],
+) # Section 7

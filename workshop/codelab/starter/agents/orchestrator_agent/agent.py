@@ -28,10 +28,10 @@ from agents.content_analyzer_agent.agent import content_analyzer_agent
 
 
 # --- Section 6: Sequential — Research and Draft ---
-# TODO: #REPLACE-research-and-draft-workflow
-# Create a SequentialAgent named "research_and_draft_workflow"
-# with sub_agents=[topic_research_agent, content_drafter_agent]
-research_and_draft_workflow = None  # Replace this line
+research_and_draft_workflow = SequentialAgent(
+    name="research_and_draft_workflow",
+    sub_agents=[topic_research_agent, content_drafter_agent],
+)
 
 
 # --- Section 7: Loop — Quality Improvement ---
@@ -75,4 +75,5 @@ orchestrator_agent = None  # Replace this line
 
 
 # root_agent is used by `adk web` and the Runner
-root_agent = orchestrator_agent
+# root_agent = orchestrator_agent
+root_agent = research_and_draft_workflow

@@ -112,10 +112,12 @@ orchestrator_agent = LlmAgent(
     sub_agents=[full_content_workflow, content_analyzer_agent],
     #tools=[preload_memory_tool.PreloadMemoryTool()],
     generate_content_config=GENERATE_CONTENT_CONFIG,
-    #before_agent_callback=before_agent_callback,
-    #after_agent_callback=after_agent_callback,
-    #before_model_callback=before_model_callback,
-    #after_model_callback=after_model_callback,
+    before_agent_callback=before_agent_callback,
+    after_agent_callback=after_agent_callback,
+    before_model_callback=before_model_callback,
+    after_model_callback=after_model_callback,
+    #before_tool_callback=before_tool_callback,
+    #after_tool_callback=after_tool_callback,
 )
 
 

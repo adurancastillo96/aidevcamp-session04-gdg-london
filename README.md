@@ -46,15 +46,6 @@ Showcasing the research_and_draft_workflow: content_drafter_agent after topic_re
 ### 12. Full-Stack Cloud Run Deployment
 ![Full-Stack Cloud Run Deployment](assets/codelab-12.png)
 
-### 13. Clean-up Resources
-![Clean-up Resources](assets/codelab-13.png)
-
-### 14. Agents Teams: sub_agents vs AgentTool
-![Agents Teams](assets/codelab-14.png)
-
-### 15. Choosing the Right Architecture
-![Choosing the Right Architecture](assets/codelab-15.png)
-
 ### 16. Callbacks: Obervability & Safety
 ![Callbacks: Obervability & Safety](assets/codelab-16.png)
 
